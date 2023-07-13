@@ -1,0 +1,20 @@
+{%
+  set classes = [
+    'paragraph',
+    'paralax',
+    'align-middle',
+    'mb-4',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{{ attach_library('staj/paralax') }}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} style="background-image: url('{{ file_url(paragraph.field_paralax_image.entity.uri.value) }}');">
+    {% block content %}
+      {{ paragraph.field_card_image_body.value|raw }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

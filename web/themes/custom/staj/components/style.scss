@@ -1,0 +1,22 @@
+@import "global";
+
+body {
+    background-color:$body-bg !important;
+}
+
+.header img {
+    width: 100%;
+    height: auto;
+    filter: invert(100%);
+}
+
+.footer img {
+    width: 30%;
+    height: auto;
+}
+
+.header nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}

@@ -1,0 +1,19 @@
+name: Staj
+type: theme
+description: 'PRU Staj Programı'
+core_version_requirement: '>=9.2'
+base theme: stable9
+
+regions:
+  branding: 'Branding'
+  header: 'Header'
+  slider: 'Slider'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  footer_left: 'Footer Left'
+  footer_center: 'Footer Center'
+  footer_right: 'Footer Right'
+
+libraries:
+  - staj/bootstrap-cdn
+  - staj/base

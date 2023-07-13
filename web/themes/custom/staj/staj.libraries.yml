@@ -1,0 +1,37 @@
+base:
+  version: 1.0.0
+  css:
+    base:
+      css/style.css: {}
+
+bootstrap-cdn:
+  version: 5.3.0
+  css:
+    theme:
+     https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css: { type: external, minified: true }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js: { type: external, minified: true }
+
+card:
+  version: 1.0.0
+  css:
+    base:
+      css/card/card.css: {}
+
+header:
+  version: 0.2
+  css:
+    component:
+      css/header/navbar.css: {}
+
+cars:
+  version: 0.1
+  css:
+    component:
+      css/cars/cars.css: {}
+    
+paralax:
+  version: 0.1
+  css:
+    component:
+      css/paralax/paralax.css: {}
