@@ -56,19 +56,21 @@
         </div>      
       </div>
     </div> {# /.header #}
-  
-    <div class="slider-container">
+  </div>
+
+    <div class="slider">
       {{ page.slider }}
     </div>
-  
+    
+  <div class="layout-container">
     <div class="main container">
       {{ page.content }}
     </div>
   
-    <div class="footer bg-warning">
+    <div class="footer bg-warning py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">{{ page.footer_left }}</div>
+          <div class="col-md-4 py-5">{{ page.footer_left }}</div>
           <div class="col-md-4">{{ page.footer_center }}</div>
           <div class="col-md-4">{{ page.footer_right }}</div>
         </div>

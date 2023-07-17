@@ -30,9 +30,13 @@
  * @see template_preprocess_views_view()
  */
 #}
+{{attach_library('staj/card')}}
+
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'row', 
+    'staj-news',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

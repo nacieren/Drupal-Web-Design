@@ -35,3 +35,9 @@ paralax:
   css:
     component:
       css/paralax/paralax.css: {}
+
+slider:
+  version: 0.1
+  css:
+    component:
+      css/slider/event-slider.css: {}
