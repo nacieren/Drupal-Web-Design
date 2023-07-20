@@ -54,3 +54,11 @@ custom_module_1.contact_form_custom_3':
     _form: 'Drupal\custom_module_1\Form\EditForm'
   requirements:
      _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access4'
+
+custom_module_1.multistep_form_custom_4':
+  path: '/multistep-form'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\MultiStepForm'
+  requirements:
+     _access: TRUE
+     
