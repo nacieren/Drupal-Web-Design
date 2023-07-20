@@ -1,0 +1,9 @@
+karsilama sayfasi erisimi:
+  title: 'karsilama sayfasi erisimi'
+  description: 'karsilama sayfasi erisimi izni.'
+  restrict access: true
+
+add content page visible erisimi:
+  title: 'add content page visible erisimi'
+  description: 'add content page visible erisimi izni.'
+  restrict access: true

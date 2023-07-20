@@ -67,65 +67,58 @@
  *
  */
 #}
+<article{{ attributes }}>
 
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
 
-<div{{ content_attributes }}>
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
 
-  
-    <div class="row mb-5">
-      <div class="col-6">
+  <div{{ content_attributes }}>
+    <div class="d-lg-flex d-md-flex align-items-center gap-5 bg-white p-4 rounded-5 shadow">
+      <div class="event-img">
         {{ content.field_event_image }}
       </div>
-      <div class="col-6">
-      <p> {{ content.field_event_date}} </p>
-      <p > {{ content.field_event_location}} </p>
-      <h1> {{ content.field_event_summary}} </h1>
+      <div class="event-title">
+      <span class="event-date position-relative d-flex">{{ content.field_event_date }}</span>
+      {{ content.field_event_location }}
+      <h1>{{ node.label }}</h1>
       </div>
-  
-  </div>
-
-  <div class="row">
-  <div class="col-7">
-    {{ content.field_event_description }}
-  </div>
-
-      <div class="col-5">
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">{{ content.title }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="col">{{ content.field_event_location}}</th>
-    </tr>
-    <tr>
-      <th scope="col">{{ content.field_event_date}} - {{ content.field_field_event_end_time}} </th>
-    </tr>
-    <tr>
-      <th scope="col">{{ content.field_event_food_services }}</th>
-    </tr>
-    <tr>
-      <th scope="col">{{ content.field_event_paid}} {{ content.field_event_price}} </th>
-    </tr>
-  </tbody>
-</table>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-8 col-md-6">
+        {{ content.body }}
+        {{ content.field_event_program }}
+        {{ drupal_view('event_spekar', 'block_1') }}
       </div>
-
-
-  </div>
-
-  <div class="row mb-4">
-  <div class="col-6">
-    {{ content.field_event_speaker_image}}
-  </div>
-    <div class="col-6 mt-5">
-    <h1>{{ content.field_event_speaker}}</h1>
+      <div class="col-lg-4 col-md-6">
+        <div class="event-title bg-white rounded-3 p-5">
+          {{ node.field_event_date.fieldDefinition.label }}:
+          <span class="event-date position-relative d-flex my-3"> {{ content.field_event_date }}</span>
+           {{ node.field_event_location.fieldDefinition.label }}:
+          {{ content.field_event_location }}
+        </div>
+        <div class="event-detail bg-white rounded-3 p-5 mt-4">
+          <h2>{{ 'Short Details'|t }}</h2>
+          {{ content.field_event_category }}
+          {{ content.field_event_price }}
+          {{ content.field_event_participant_limit }}
+        </div>
+      </div>
     </div>
   </div>
 
-  
-</div>
-
-
+</article>

@@ -1,0 +1,56 @@
+custom_module_1.configure:
+  # The path always starts with a leading forward-slash.
+  path: '/admin/content/custom_module_1/settings'
+  # Defines the default properties of a route.
+  defaults:
+    # For page callbacks that return a render array use _controller.
+    _form: 'Drupal\custom_module_1\Form\InfoForm'
+  # Require a permission to access this route.
+  requirements:
+    _permission: 'access content'
+
+custom_module_1.controller_example:
+  # The path always starts with a leading forward-slash.
+  path: '/controller-example'
+  # Defines the default properties of a route.
+  defaults:
+    # For page callbacks that return a render array use _controller.
+    _controller: 'Drupal\custom_module_1\Controller\ExampleController::example'
+  # Require a permission to access this route.
+  requirements:
+    _permission: 'karsilama sayfasi erisimi'
+    #_role: 'authenticated'
+
+custom_module_1.contact_form:
+  # The path always starts with a leading forward-slash.
+  path: '/contact-form'
+  # Defines the default properties of a route.
+  defaults:
+    # For page callbacks that return a render array use _controller.
+    _form: 'Drupal\custom_module_1\Form\ContactForm'
+  # Require a permission to access this route.
+  requirements:
+    _permission: 'access content'
+    #_role: 'authenticated'
+
+custom_module_1.contact_form_custom:
+  path: '/contact-form-custom-access'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\ContactForm'
+  requirements:
+    _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access'
+
+custom_module_1.contact_form_custom_2':
+  path: '/contact-form-custom-access-2'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\ContactForm'
+  requirements:
+    _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access3'
+
+
+custom_module_1.contact_form_custom_3':
+  path: '/user-edit/{uid}'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\EditForm'
+  requirements:
+     _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access4'

@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function staj_theme_suggestions_page_alter(&$suggestions, $variables, $hook) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type;
+  }
+}
