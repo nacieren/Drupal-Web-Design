@@ -41,3 +41,9 @@ slider:
   css:
     component:
       css/slider/event-slider.css: {}
+
+event:
+  version: 1.0.0
+  css:
+    base:
+      css/latest-events/event.css: {}

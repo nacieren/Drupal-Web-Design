@@ -40,7 +40,7 @@ custom_module_1.contact_form_custom:
   requirements:
     _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access'
 
-custom_module_1.contact_form_custom_2':
+custom_module_1.contact_form_custom_2:
   path: '/contact-form-custom-access-2'
   defaults:
     _form: 'Drupal\custom_module_1\Form\ContactForm'
@@ -48,17 +48,38 @@ custom_module_1.contact_form_custom_2':
     _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access3'
 
 
-custom_module_1.contact_form_custom_3':
+custom_module_1.contact_form_custom_3:
   path: '/user-edit/{uid}'
   defaults:
     _form: 'Drupal\custom_module_1\Form\EditForm'
   requirements:
      _custom_access: '\Drupal\custom_module_1\Controller\ExampleController::access4'
 
-custom_module_1.multistep_form_custom_4':
+custom_module_1.multistep_form_custom_4:
   path: '/multistep-form'
   defaults:
     _form: 'Drupal\custom_module_1\Form\MultiStepForm'
   requirements:
-     _access: TRUE
+     _access: 'TRUE'
+
+custom_module_1.multistep_form_2_custom_5:
+  path: '/multistep-form-2'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\MultiStepForm2'
+  requirements:
+     _access: 'TRUE'
+
+custom_module_1.dependencies_form_2_custom_6:
+  path: '/dependencies-form'
+  defaults:
+    _form: 'Drupal\custom_module_1\Form\DependenciesForm'
+  requirements:
+     _access: 'TRUE'
+
+custom_module_1.controller_custom_7:
+  path: '/controller-table'
+  defaults:
+    _controller: 'Drupal\custom_module_1\Controller\CustomTable::example'
+  requirements:
+     _access: 'TRUE'     
      
