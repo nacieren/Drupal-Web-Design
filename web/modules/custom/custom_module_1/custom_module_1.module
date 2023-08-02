@@ -30,16 +30,23 @@ function custom_module_1_theme($existing, $type, $theme, $path) {
  }
 
  function custom_module_1_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //Butun add content sayfalari
   if ($form_id == "node_page_form") {
     $current_user = \Drupal::currentUser();
     //Permission'a göre erisim.
-    if ($current_user->hasPermission('add content page visible erisimi') == FALSE) {
+    if ($current_user->hasPermission('add content page erisimi') == FALSE) {
       $form['field_anonymous_is_visible']['#access'] = FALSE;
     }
-    //Role göre erisim
+    //Role'e göre erisim. Content Editor rolu erismesin.
     // $roles = $current_user->getRoles();
     // if (in_array("content_editor", $roles)) {
-    //   $form['field_anonymous_is_visible']['#access'] = FALSE;
+    // $form['field_anonymous_is_visible']['#access'] = FALSE;
     // }
   }
+}
+function custom_module_1_cron() {
+
+  // Logs an error
+  \Drupal::logger('my_module')->error("Calıştı");
+
 }
